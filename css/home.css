@@ -1,0 +1,16 @@
+.banner-text{
+    padding-top:3em;
+}
+.banner-text h1{
+    color:blue
+}
+.banner-text h2{
+    padding-top:1em;
+    padding-bottom: 1em;
+    font-size: 1.7em;
+}
+.about{
+    max-width:768px;
+    margin:0 auto;
+    text-align: center;
+}

@@ -1,0 +1,26 @@
+main{
+    margin-left: 10px;
+}
+h1{
+    text-align: center;
+}
+dl{
+    width:50%;
+    margin-bottom: 100px;
+}
+dt{
+    background: purple;
+    color: white;
+    padding-left: 20px;
+}
+dd{
+    background: pink;
+    display: none;
+}
+span:hover{
+    font-weight:bolder;
+    border:1px black solid;
+}
+section{
+    border:1px solid black;
+}

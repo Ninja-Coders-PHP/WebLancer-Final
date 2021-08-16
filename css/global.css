@@ -1,0 +1,280 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    /* background-color:rgb(209, 209, 183); */
+    background-image:url(../images/bg1.jpg);
+    padding:0px;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    font-size: 2.5em;
+}
+h2{
+    font-size: 2em;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Roboto', sans-serif;
+}
+ul li{
+    list-style: none;
+}
+
+.page-container{
+    max-width: 1200px;
+    margin:0 auto;
+}
+.hidden {
+    position:absolute;
+    left:-10000px;
+    width:1px;
+    height:1px;
+}
+/*-------------------------------------------------
+HEADER CLASSES
+-------------------------------------------------*/
+.header-wrap{
+    padding: 1em;
+    background-color:#021F3C;
+    text-align: center;
+}
+.header-wrap a {
+    text-decoration: none;
+    color: white;
+}
+.header-wrap a:hover {
+    text-decoration: none;
+    color: white;
+}
+.navbar-nav ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.navbar-nav li{
+    display:inline;
+}
+.navbar-nav a{
+    display:inline-block;
+    padding:10px;
+}
+
+.menu{
+    text-align: center;
+}
+.menu ul{
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+}
+.menu li{
+    padding-right:1.5em;
+}
+.menu li a{
+    font-size: 1.5em;
+}
+.menu ul li a:hover{
+    color:wheat;
+    background:url(../images/menu-btn.png)
+    no-repeat;
+}
+.menu ul li a.active{
+    background-image:url(../images/menu-btn.png);
+    background-repeat :no-repeat;
+    color:white;
+    color:wheat;
+}
+
+/*-------------------------------------------------
+Footer CLASSES
+-------------------------------------------------*/
+footer{
+    margin-top:1em;
+    background-color:rgba(172, 168, 168,0.3) ;
+}
+#footer{
+    margin-top: 8em;
+}
+.footer{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-gap: 3em;
+    padding-bottom: 1.5em;
+}
+.footer ul{
+    list-style: none;
+    padding-right: 0;
+}
+.footer-logo{
+    text-align: center;
+}
+
+
+.footer-contact{
+    margin-top:-2em;
+    padding:2em;
+    background-color: #021F3C;
+    border-radius: 5px;
+    z-index: 2;
+    color: white;
+}
+.footer-contact-container{
+    display: flex;
+    margin-bottom: 1em;
+}
+.footer-contact-container h3,h4{
+    margin: 0;
+}
+.footer-contact-container a:hover{
+    color:white;
+    text-decoration: underline;
+}
+.contact-details{
+    padding-left: 4em;
+}
+.contact-details h3{
+    font-size: 1.35em;
+}
+.contact-details h4{
+    font-size: 1em;
+}
+.social-icons{
+    display: flex;
+    justify-content: center;
+}
+.social-icons a{
+    padding:1em;
+}
+.icons{
+    width: 30px;
+    height: 30px;
+}
+
+
+.subscription-form{
+    display: flex;
+}
+.subscription-form input{
+    padding: 1em;
+}
+
+
+.subscription-form button{
+    background-color: #021F3C;
+    border-color: #021F3C;
+    color: #d5d5d5;
+}
+.subscription-form img{
+    width: 30px;
+}
+
+
+.line{
+    margin-left: 1em;
+    margin-right: 1em;
+    height: 2px;
+    background-color: #021F3C;
+}
+
+
+.bottom-footer{
+    display: flex;
+    justify-content: space-between;
+    padding:1.5em;
+    align-items: center;
+}
+.bottom-footer p{
+    margin: 0;
+}
+.sperator{
+    font-weight: bolder;
+}
+.bottom-menu{
+    list-style: none;
+    display: flex;
+    padding:1em;
+}
+.bottom-menu li {
+    padding-right: 1em;
+}
+
+
+/*-------------------------------------------------
+Form CLASSES
+-------------------------------------------------*/
+
+.form{
+    margin:0 auto;
+    width: 768px;
+    border-radius: 5px;
+    border: 2px solid #021f3c;
+    padding:1em;
+    margin-top:1em;
+}
+.error{
+    color: red;
+    font-size: 0.75em;
+}
+.form-heading{
+    text-align: center;
+}
+.form-heading h2{
+    margin:0;
+}
+.form-heading p{
+    margin: 0;
+}
+.form-element-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin:0 auto;
+    padding-top:1em;
+}
+.individual-element{
+    margin-top: 1em;
+}
+label{
+    font-weight: bold;
+}
+input,select{
+    display: block;
+    padding: 0.7em;
+    width: 300px;
+}
+textarea{
+    display: block;
+    width: 100%;
+}
+input[type=radio],input[type=checkbox]{
+    display: inline;
+    width: auto;
+}
+.submit-section{
+    text-align: center;
+    padding-top:1em;
+}
+.submit-Button{
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #021f3c;
+    font-weight: bold;
+    border: 1px solid #021f3c;
+    color: white;
+}
+.submit-Button:hover{
+    color:  white;
+    background-color: gray;
+    font-weight: bold;
+    border: 1px solid gray;
+
+}
+
+@media (max-width:768px){
+    .footer-contact{
+        margin-top:0px;
+    }
+}
