@@ -22,7 +22,7 @@ $selectedUser = $u->getUserById($dbcon, $_SESSION['userid']);
 
 $f = new freelancer();
 $count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', 'xyz');
-var_dump($count);
+
 
 ?>
 <html lang="en">
@@ -53,16 +53,14 @@ var_dump($count);
             <div class="col-md-6">
                 <div class="profile-head">
                     <h5>
-                        Alex Smith
+                        <?= $selectedUser->preferred_user_name?>
                     </h5>
                     <h6>
                         Freelancer
                     </h6>
                 </div>
             </div>
-            <div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/><br>
-            </div>
+
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -71,8 +69,21 @@ var_dump($count);
                     <a href="">Building e-commerce website</a><br/>
                     <a href="">PHP project for school</a><br/>
                     <a href="">Financial system for accountant </a>
-                </div><br><br>
-                
+                </div><br>
+                <div class="col-md-4">
+                    <form action="./update-.php" method="post">
+                        <input type="hidden" name="id" value=""/>
+                        <input type="submit" class="button btn btn-success" name="updateFreelancer" value="Add Information"/>
+                    </form><br><br>
+                    <form action="./update-.php" method="post">
+                        <input type="hidden" name="id" value=""/>
+                        <input type="submit" class="button btn btn-primary" name="updateFreelancer" value="Update Information"/>
+                    </form>
+                    <form action="./delete-.php" method="post">
+                        <input type="hidden" name="id" value=""/>
+                        <input type="submit" class="button btn btn-danger" name="deleteFreelancer" value="Delete Information"/>
+                    </form>
+                </div>
             </div>
             <div class="col-md-8">
                 <div class="tab-content profile-tab" id="myTabContent">
@@ -82,7 +93,7 @@ var_dump($count);
                                 <label>User Id</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Alex123</p>
+                                <p><?= $selectedUser->id?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -90,7 +101,7 @@ var_dump($count);
                                 <label>Name</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Alex Smith</p>
+                                <p><?= $selectedUser->preferred_user_name?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -98,7 +109,7 @@ var_dump($count);
                                 <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                                <p>alex.smith@gmail.com</p>
+                                <p><?= $selectedUser->email?></p>
                             </div>
                         </div>
                         <div class="row">
@@ -106,23 +117,31 @@ var_dump($count);
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-6">
-                                <p>647 647 6477</p>
+                                <p><?= $selectedUser->phone_number?></p>
                             </div>
-                        </div>
+                        </div><hr>
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Profession</label>
                             </div>
                             <div class="col-md-6">
-                                <p>Web Developer</p>
+                                <p></p>
                             </div>
-                        </div>
+                        </div><br>
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Skills</label>
                             </div>
                             <div class="col-md-6">
-                                <p>WordPress, WooCommerce, PHP, .NET</p>
+                                <p></p>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Linked-In</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p></p>
                             </div>
                         </div>
                     </div>
