@@ -1,6 +1,6 @@
 <?php
-    require_once('Models/Database.php');
-    require_once ('Models/contactUsUsers.php');
+    require_once('models/Database.php');
+    require_once ('models/contactUsUsers.php');
 
     session_start();
     if(!isset($_SESSION['userid'])){

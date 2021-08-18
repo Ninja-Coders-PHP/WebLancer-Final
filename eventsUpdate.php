@@ -1,7 +1,7 @@
 <?php
 
-require_once('Models/Database.php');
-require_once ('Models/events.php');
+require_once('models/Database.php');
+require_once ('models/events.php');
 
 $fname = $lname = $email = $pn = "";
 $e = new events();
