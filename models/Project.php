@@ -113,7 +113,7 @@ class Project
     }
 
     public function getFreelancers($db){
-        $query = "SELECT freelancer_profiles.id, users.first_name, users.last_name
+        $query = "SELECT freelancer_profiles.id, users.first_name as fname, users.last_name
                     FROM freelancer_profiles
                     JOIN users ON users.id = freelancer_profiles.user_id
                     WHERE users.role_id = 6";

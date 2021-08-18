@@ -16,9 +16,11 @@ if(isset($_POST['update']))
 
 
 if (isset($_POST['updateNewsLetter'])) {
+    $nsId = $_POST['nsId'];
     $subject = $_POST['subject'];
     $body = $_POST['body'];
     $flag = 0;
+    $date = $_POST['date'];
     if ($subject == '') {
         $subjectErr = "Please Enter a Subject";
         $flag = 1;
@@ -29,8 +31,8 @@ if (isset($_POST['updateNewsLetter'])) {
     }
     if ($flag == 0) {
         $nl = new newsletter_details();
-        var_dump($dbcon,$id, $subject, $body, $dateCreated);
-        $cnt = $nl->updateNewsLetter($dbcon,$id, $subject, $body, $dateCreated);
+        echo("$id -id") ;
+        $cnt = $nl->updateNewsLetter($dbcon,$nsId, $subject, $body, $date);
         var_dump($cnt);
 //        if ($cnt) {
 //            header('Location:newsletter-list.php');
@@ -62,6 +64,8 @@ if (isset($_POST['updateNewsLetter'])) {
                 <div class="form-heading">
                     <h2>Update a NewsLetter</h2>
                 </div>
+                <input type="text" class="hidden" value="<?= $_POST['id'];?>" name = "nsId">
+                <input type="text" class="hidden" value="<?= isset($selectedNewsletter->created_date)?$selectedNewsletter->created_date:'';?>" name="date"/>
                 <!-- <div class="form-element-wrapper"> -->
                 <div class="form-elements">
                     <label for="subject">Subject: </label>

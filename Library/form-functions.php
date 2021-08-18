@@ -28,4 +28,15 @@ function populateDropdownStatus($statuses, $select = ""){
     }
 
     return $html_dropdown;
+
+    function populateDropdownFreelancer($freelancers, $select = "")
+    {
+        $html_dropdown = "";
+        foreach ($freelancers as $freelancer) {
+            $selected = $select == $freelancer->id ? "selected" : "";
+            $html_dropdown .= "<option $selected value='$freelancer->id'>$freelancer->fname</option>";
+        }
+
+        return $html_dropdown;
+    }
 }
