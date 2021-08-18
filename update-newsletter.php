@@ -2,6 +2,17 @@
 
 require_once 'models/Database.php';
 require_once 'models/newsletter_details.php';
+session_start();
+if(!isset($_SESSION['userid'])){
+    header('Location: login.php');
+}
+else
+{
+    if($_SESSION['role'] != 'Admin')
+    {
+        header('Location: login.php');
+    }
+}
 $dbcon = Database::getDb();
 $nl = new newsletter_details();
 $subject=$body=$dateCreated=$id = '';

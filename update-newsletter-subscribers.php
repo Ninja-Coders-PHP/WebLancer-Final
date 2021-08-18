@@ -5,6 +5,17 @@ require_once 'models/newsletter_Subscribers.php';
 $dbcon = Database::getDb();
 $ns = new newsletter_Subscribers();
 $email=$id = '';
+session_start();
+if(!isset($_SESSION['userid'])){
+    header('Location: login.php');
+}
+else
+{
+    if($_SESSION['role'] != 'Admin')
+    {
+        header('Location: login.php');
+    }
+}
 if(isset($_POST['update']))
 {
     $id = $_POST['id'];

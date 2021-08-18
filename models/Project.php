@@ -17,7 +17,8 @@ class Project
                          projects.id, 
                          projects.desc, 
                          projects.project_name,
-                         projects.freelancer_ID
+                         projects.freelancer_ID,
+                        projects.user_id
                   FROM projects 
                   INNER JOIN statuses on statuses.id = projects.status_id 
                   WHERE status_id = :status";
@@ -34,7 +35,8 @@ class Project
                        projects.id, 
                        projects.desc, 
                        projects.project_name,
-                       projects.freelancer_ID
+                       projects.freelancer_ID,
+                        projects.user_id
                 FROM projects 
                 INNER JOIN statuses ON statuses.id = projects.status_id AND projects.id = :id";
         $pst = $db->prepare($sql);
@@ -52,7 +54,7 @@ class Project
                        projects.id, 
                        projects.desc,
                        projects.project_name,
-                       projects.freelancer_ID
+                       projects.freelancer_ID, projects.user_id
                 FROM projects 
                 INNER JOIN statuses ON statuses.id = projects.status_id ";
 
@@ -63,17 +65,35 @@ class Project
         $projects = $pdostm->fetchAll(\PDO::FETCH_OBJ);
         return $projects;
     }
+    public function getAllProjectsBYUserId($dbcon,$id){
 
-    public function addProject($desc, $project_name, $freelancer_id, $status, $db)
+        $sql = "SELECT statuses.status AS status, 
+                       projects.id, 
+                       projects.desc,
+                       projects.project_name,
+                       projects.freelancer_ID, projects.user_id
+                FROM projects 
+                INNER JOIN statuses ON statuses.id = projects.status_id where projects.user_id = :id;";
+
+        //$sql = "SELECT * FROM projects INNER JOIN statuses ON statuses.id = projects.status_id";
+        $pdostm = $dbcon->prepare($sql);
+        $pdostm->execute();
+        $pdostm->bindParam(':id', $id);
+        $projects = $pdostm->fetchAll(\PDO::FETCH_OBJ);
+        return $projects;
+    }
+
+    public function addProject($desc, $project_name, $freelancer_id, $status, $db,$user_id)
     {
-        $sql = "INSERT INTO projects (`desc`, project_name, status_ID, freelancer_id)
-              VALUES (:desc, :project_name, :status, :freelancer_id) ";
+        $sql = "INSERT INTO projects (`desc`, project_name, status_ID, freelancer_id,user_id)
+              VALUES (:desc, :project_name, :status, :freelancer_id,:user_id );";
         $pst = $db->prepare($sql);
 
         $pst->bindParam(':desc', $desc);
         $pst->bindParam(':project_name', $project_name);
         $pst->bindParam(':status', $status);
         $pst->bindParam(':freelancer_id', $freelancer_id);
+        $pst->bindParam(':user_id', $user_id);
 
         $count = $pst->execute();
         return $count;
@@ -89,24 +109,23 @@ class Project
 
     }
 
-    public function updateProject($id, $desc, $project_name, $freelancer_id, $status, $db){
+    public function updateProject($id, $desc, $project_name, $freelancer_id, $status, $db,$user_id){
         $sql = "UPDATE projects
                 SET `desc` = :desc,
                     project_name = :project_name,
                     status_id = :status,
-                    freelancer_ID = :freelancer_id
+                    freelancer_ID = :freelancer_id,
+                    user_id =:user_id
                 WHERE id = :id
         
         ";
-
         $pst =  $db->prepare($sql);
-
         $pst->bindParam(':desc', $desc);
         $pst->bindParam(':project_name', $project_name);
         $pst->bindParam(':status', $status);
         $pst->bindParam(':freelancer_id', $freelancer_id);
         $pst->bindParam(':id', $id);
-
+        $pst->bindParam(':user_id', $user_id);
         $count = $pst->execute();
 
         return $count;

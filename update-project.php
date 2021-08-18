@@ -15,7 +15,7 @@ else
         header('Location: login.php');
     }
 }
-$desc = $project_name = $freelancer_id = $status = "";
+$desc = $project_name = $freelancer_id = $status =$user_id= "";
 $s = new Project();
 $statuses = $s->getStatuses(Database::getDb());
 $freelancers = $s->getFreelancers(Database::getDb());
@@ -42,6 +42,7 @@ if(isset($_POST['updateProject'])){
     $status = $project->status;
     $stat_id = $project->status_id;
     $freelancer_id = $project->freelancer_ID;
+    $user_id = $project->user_id;
 
 }
 
@@ -51,9 +52,9 @@ if(isset($_POST['updProject'])){
     $project_name = $_POST['project_name'];
     $status = $_POST['status'];
     $freelancer_id = $_POST['freelancer_id'];
-
+    $user_id = $_POST['user_id'];
     $db = Database::getDb();
-    $count = $s->updateProject($id, $desc, $project_name, $freelancer_id, $status, $db);
+    $count = $s->updateProject($id, $desc, $project_name, $freelancer_id, $status, $db,$user_id);
 
     if($count){
         header('Location:  list-projects.php');
@@ -95,6 +96,7 @@ if(isset($_POST['updProject'])){
 
             </span>
         </div>
+        <input type="text" value="<?= $user_id?>" name="user_id" class="hidden">
         <div class="form-group">
             <label for="project_name">Project Name :</label>
             <input type="text" class="form-control" id="project_name" name="project_name"

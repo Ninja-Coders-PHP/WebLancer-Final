@@ -35,11 +35,11 @@ if(isset($_POST['addProject'])){
     $project_name = $_POST['project_name'];
     $status = $_POST['status'];
     $freelancer_id = $_POST["freelancer_id"];
-
+    $user_id = $_POST['user_id'];
 
     $db = Database::getDb();
     $s = new Project();
-    $c = $s->addProject($desc, $project_name, $freelancer_id, $status, $db);
+    $c = $s->addProject($desc, $project_name, $freelancer_id, $status, $db,$user_id);
 
     if($c){
         header('Location:list-projects.php');
@@ -80,6 +80,7 @@ include "header.php";
 <!---->
 <!--            </span>-->
         </div>
+        <input type="text" name="user_id" value="<?=$_SESSION['userid'];?>" class="hidden">
         <div class="form-group">
             <label for="project_name">Project :</label>
             <input type="text" class="form-control" name="project_name" id="project_name"  value=""
