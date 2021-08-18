@@ -36,7 +36,7 @@
 ### Note
 
 - Manal : User CRUD & Login and Logout.
-- Uditesh : Contact Us CRUD.
+- Uditesh : Contact Us, FAQs and Event bookings CRUD.
 - Yifat : Project List CRUD.
 - Majdi : Freelancer Dashboard CRUD, Employer Dashboard CRUD.
 - Haroon : Feedback for Website & Careers page CRUD.
