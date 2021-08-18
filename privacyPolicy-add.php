@@ -1,35 +1,51 @@
 <?php
 require_once 'models/Database.php';
-require_once 'models/newsletter_Subscribers.php';
+require_once 'models/privacypolicy.php';
 $dbcon = Database::getDb();
-$flag = 0;
-if(isset($_POST['subscribe']))
+session_start();
+if(!isset($_SESSION['userid'])){
+    header('Location: login.php');
+}
+else
 {
-    $email = $_POST['email'];
-    $name = $_POST['name'];
-    if ($email == '')
+    if($_SESSION['role'] != 'Admin')
     {
-        $invalid = "Please enter the email address.";
+        header('Location: login.php');
+    }
+}
+$flag = 0;
+if(isset($_POST['add']))
+{
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $user_id = $_SESSION['userid'];
+    $createdDate = date("Y-m-d H:i:s");
+    $modifiedDate =  date("Y-m-d H:i:s");
+    if ($name == '')
+    {
+        $invalid = "Please enter the policy name";
         $flag =1;
     }
-    else if (!filter_input(INPUT_POST, 'email',FILTER_VALIDATE_EMAIL))
+
+    if($description == '')
     {
-        $invalid = "Please Enter valid Email Address.";
-        $flag =1 ;
+        $invalid = "Please enter description.";
+        $flag =1;
     }
-    if($name == '')
+    elseif ($description == "Enter the details of Policy")
     {
-        $invalid = "Please enter your name.";
+        $invalid = "Please enter valid description.";
         $flag =1;
     }
 
     if($flag == 0)
     {
-        $s = new newsletter_Subscribers();
-        $count = $s->addSubscriber($dbcon,$email,$name);
+
+        $pp = new privacypolicy();
+        $count = $pp->addPolicy($dbcon,$name,$description,$createdDate,$modifiedDate,$user_id);
         if($count)
         {
-            header('Location:home.php');
+            header('Location:privacyPolicy-list.php');
         }
         else{
             header('Location:custom-error.php');
@@ -56,24 +72,26 @@ include "header.php";
         <form action="" method="POST">
             <div class="form">
                 <div class="form-heading">
-                    <h2>News Letter Subscription</h2>
-                    <p>Want to Subscribe to News Letter for latest trends.</p>
+                    <h2>New Privacy Policy</h2>
                 </div>
 
                 <div class="form-element-wrapper">
                     <div class="form-elements">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email"  value="<?= isset($email)?$email:'';?>">
+                        <label for="name">Policy Name</label>
+                        <input type="text" id="name" name="name"  value="<?= isset($name)?$name:'';?>">
                     </div>
-                        <div class="form-elements">
-                            <label for="name">Full Name</label>
-                            <input type="name" id="name" name="name"  value="<?= isset($name)?$name:'';?>">
-                        </div>
+
+                </div>
+                <div class="form-element-wrapper">
+                    <div class="form-elements">
+                        <label for="description">Policy Details</label>
+                        <textarea cols="10" rows="5" id="description" name="description" placeholder="Enter the details of Policy"> <?= isset($description)? htmlspecialchars($description):'Enter the details of Policy';?></textarea>
+                    </div>
                 </div>
 
                 <span class="error"><?= isset($invalid) ? $invalid: ''; ?></span>
                 <div class="submit-section">
-                    <button class="submit-Button" type="submit" id="subscribe" name="subscribe">Subscribe</button>
+                    <button class="submit-Button" type="submit" id="add" name="add">Add</button>
                 </div>
             </div>
         </form>
@@ -92,3 +110,4 @@ include "bootstrapjsfile.php"
 </body>
 
 </html>
+

@@ -92,7 +92,7 @@ include "header.php";
         <form action="" method="POST">
             <div class="form">
                 <div class="form-heading">
-                    <h2>Sign In</h2>
+                    <h2>Login </h2>
                     <p>Please login in here</p>
                 </div>
 

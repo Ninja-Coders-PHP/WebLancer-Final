@@ -70,18 +70,20 @@ if(isset($_GET['status'])){
             <th scope="col">Project</th>
             <th scope="col">Status</th>
             <th scope="col">Freelancer ID</th>
+            <th scope="col">Created By </th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($projects as $project) { ?>
+        <?php foreach ($projects as $project) {  ?>
             <tr>
                 <th><?= $project->id; ?></th>
                 <td><?= $project->desc; ?></td>
                 <td><?= $project->project_name; ?></td>
                 <td><?= $project->status; ?></td>
                 <td><?= $project->freelancer_ID; ?></td>
+                <td><?=$project->user_id;?></td>
                 <td>
                     <form action="./update-project.php" method="post">
                         <input type="hidden" name="id" value="<?= $project->id; ?>"/>

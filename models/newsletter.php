@@ -23,7 +23,7 @@ function sendNewsLetter($subscriberInfo,$newsLetter,$is_body_html)
         $mail->setFrom('weblancer243@gmail.com', 'Web Lancers');
         $mail->addAddress($subscriber->email_id, 'Test');
         $mail->Subject = $newsLetter->subject;
-        $mail->Body = $newsLetter->body;                  // Body with HTML
+        $mail->Body = "Hi $subscriber->name, <br/> $newsLetter->body";                  // Body with HTML
         $mail->AltBody = strip_tags($newsLetter->body);   // Body without HTML
         if ($is_body_html) {
             $mail->isHTML(true);              // Enable HTML

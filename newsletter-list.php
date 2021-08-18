@@ -43,6 +43,8 @@ include "header.php";
 <main>
     <section >
         <h1>List of all Newsletter</h1>
+
+        <a href="add-newsletter.php" class="button btn btn-success mb-5" > Add NewsLetter</a>
         <table class="table table-striped table-dark">
             <thead>
             <tr>
@@ -70,12 +72,7 @@ include "header.php";
                     <td>
 
                     </td>
-                    <td>
-                        <form action="./" method="post">
-                            <input type="hidden" name="id" value="<?=  $newsLetter->id; ?>"/>
-                            <input type="submit" class="button btn btn-primary" name="update" value="Update"/>
-                        </form>
-                    </td>
+
                 </tr>
             <? }
             ?>

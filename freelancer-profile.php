@@ -21,10 +21,13 @@ $u = new users();
 $selectedUser = $u->getUserById($dbcon, $_SESSION['userid']);
 
 $f = new freelancer();
-$count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', 'xyz');
+
+$results = $f->getFreelancerByUserId($dbcon, $_SESSION['userid']);
+
 
 
 ?>
+
 <html lang="en">
     <link rel="stylesheet" type="text/css" href="./css/global.css">
     <link rel="stylesheet" type="text/css" href="./css/freelancer-profile.css">
@@ -70,18 +73,17 @@ $count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', '
                     <a href="">PHP project for school</a><br/>
                     <a href="">Financial system for accountant </a>
                 </div><br>
-                <div class="col-md-4">
-                    <form action="./update-.php" method="post">
-                        <input type="hidden" name="id" value=""/>
-                        <input type="submit" class="button btn btn-success" name="updateFreelancer" value="Add Information"/>
-                    </form><br><br>
-                    <form action="./update-.php" method="post">
-                        <input type="hidden" name="id" value=""/>
-                        <input type="submit" class="button btn btn-primary" name="updateFreelancer" value="Update Information"/>
+                <div class="col-md-2">
+                     <?php if (!(isset($results->profession))){
+                       ?>
+                         <a href="add-freelancer.php" id="btn_addFreelancer" class="button btn btn-success mb-2">Add Information</a>
+                     <?php } ?>
+                    <a href="update-freelancer.php?id=<?= $selectedUser->id?>" id="btn_updateFreelancer" class="button btn btn-primary mb-2">Update Information</a>
+                    <form action="update-freelancer.php" method="post">
                     </form>
-                    <form action="./delete-.php" method="post">
-                        <input type="hidden" name="id" value=""/>
-                        <input type="submit" class="button btn btn-danger" name="deleteFreelancer" value="Delete Information"/>
+                    <form action="./delete-freelancer.php" method="post">
+                        <input type="hidden" name="id" value="<?= $selectedUser->id?>"/>
+                        <input type="submit" class="button btn btn-danger mb-2" name="deleteFreelancer" value="Delete Information"/>
                     </form>
                 </div>
             </div>
@@ -125,7 +127,7 @@ $count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', '
                                 <label>Profession</label>
                             </div>
                             <div class="col-md-6">
-                                <p></p>
+                                <p><?= isset($results->profession)? $results->profession:'Please add inforamtion'; ?></p>
                             </div>
                         </div><br>
                         <div class="row">
@@ -133,7 +135,7 @@ $count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', '
                                 <label>Skills</label>
                             </div>
                             <div class="col-md-6">
-                                <p></p>
+                                <p><?= isset($results->skills)? $results->skills:'Please add inforamtion'; ?></p>
                             </div>
                         </div><br>
                         <div class="row">
@@ -141,7 +143,7 @@ $count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', '
                                 <label>Linked-In</label>
                             </div>
                             <div class="col-md-6">
-                                <p></p>
+                                <p><?= isset($results->linked_in)? $results->linked_in:'Please add inforamtion'; ?></p>
                             </div>
                         </div>
                     </div>

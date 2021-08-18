@@ -2,7 +2,7 @@
 <?php
 
     require_once('models/Database.php');
-    require_once('models/users.php');
+    require_once('models/newsletter_Subscribers.php');
 
     session_start();
     if(!isset($_SESSION['userid'])){
@@ -16,8 +16,8 @@
         }
     }
     $dbcon = Database::getDb();
-    $u = new users();
-    $users = $u->listUsers($dbcon);
+    $ns = new newsletter_Subscribers();
+    $subscribers = $ns->getAllSubscribers($dbcon);
 
     // username - admin
     // Password - admin
@@ -49,29 +49,28 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Name</th>
                 </tr>
                 </thead>
                 <tbody>
 
                     <?php
-                    foreach($users as $user)
+                    foreach($subscribers as $subscriber)
                     {
                         ?>
                     <tr>
-                        <td> <?= $user->id?></td>
-                        <td> <?= $user->preferred_user_name?></td>
-                        <td><?= $user->email?> </td>
-                        <td><?= $user->phone_number?> </td>
-                        <td><?= $user->role_name?></td>
+                        <td> <?= $subscriber->id?></td>
+                        <td> <?= $subscriber->email_id?></td>
+                        <td><?= $subscriber->name?></td>
                         <td>
-                            <form action="./update-user.php" method="post">
-                                <input type="hidden" name="id" value="<?= $user->id; ?>"/>
-                                <input type="submit" class="button btn btn-primary" name="updateUser" value="Update"/>
+                            <form action="./update-newsletter-subscribers.php" method="post">
+                                <input type="hidden" name="id" value="<?= $subscriber->id; ?>"/>
+                                <input type="submit" class="button btn btn-primary" name="update" value="Update"/>
                             </form>
                         </td>
                         <td>
-                            <form action="./delete-user.php" method="post">
-                                <input type="hidden" name="id" value="<?=  $user->id; ?>"/>
+                            <form action="./delete-subscriber.php" method="post">
+                                <input type="hidden" name="id" value="<?=  $subscriber->id; ?>"/>
                                 <input type="submit" class="button btn btn-danger" name="deleteUser" value="Delete"/>
                             </form>
                         </td>
