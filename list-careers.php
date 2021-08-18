@@ -42,7 +42,7 @@ $results = $c->listCareers($dbcon);
                 <input type="submit" class="button btn btn-primary" name="add" value="Add Career posting" />
             </form>
 
-            <h1>List of all Careers</h1>
+            <h1>Career Listings</h1>
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>

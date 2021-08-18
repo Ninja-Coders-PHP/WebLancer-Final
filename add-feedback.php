@@ -1,7 +1,7 @@
 <?php
 
-require_once('models/Database.php');
-require_once('models/feedback.php');
+require_once('Models/Database.php');
+require_once('Models/feedback.php');
 
 session_start();
 
@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
 
     var_dump($count);
     if ($count) {
-        header('Location:listfeedback.php');
+        header('Location:home.php');
     } else {
         header('Location : custom-error.php');
     }
@@ -41,7 +41,6 @@ if (isset($_POST["submit"])) {
     </head>
 
     <body>
-        <?= include "header.php"; ?>
 
         <body>
             <h2>Please rate your experience with this website</h2>
@@ -62,14 +61,14 @@ if (isset($_POST["submit"])) {
                 </div>
                 <div>
                     <label for="reviews"></label>
-                    <textarea name="reviews" style="max-width: 600px;" id="reviews" rows="6" placeholder="Feedback"></textarea>
+                    <textarea name="reviews" style="max-width: 500px;" id="reviews" rows="6" placeholder="Feedback"></textarea>
                 </div>
                 <div class="submit-section">
                     <button class="submit-Button" type="submit" id="submit" name="submit">Submit</button>
                 </div>
             </form>
             <footer>
-                <?= include_once "footer.php";
+                <?=
                 include_once "bootstrapjsfile.php";
                 ?>
             </footer>

@@ -1,7 +1,7 @@
 <?php
 
-require_once('models/Database.php');
-require_once('models/feedback.php');
+require_once('Models/Database.php');
+require_once('Models/feedback.php');
 
 /*
 session_start();
@@ -37,6 +37,12 @@ $results = $f->listFeedback($dbcon);
     ?>
     <main>
         <section>
+
+            <!--<form action="./add-feedback.php" method="post">
+                <input type="hidden" name="id" value="<?= $careers->id; ?>" />
+                <input type="submit" class="button btn btn-primary" name="add" value="Add Feedback" />
+            </form>-->
+
             <h1>List of all Feedback</h1>
             <table class="table table-striped table-dark">
                 <thead>
