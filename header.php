@@ -21,7 +21,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href=" freelancer-profile.php">Freelancer Profile</>
-              <a class="dropdown-item" href = "Freelancer-Dashboard-Project-List.php">List of Freelancer Projects</a>
+              <a class="dropdown-item" href = "Freelancer-Dashboard-Project-list.php">List of Freelancer Projects</a>
               <a class="dropdown-item" href="DisputeManagement.php">Dispute Management</a>
           </div>
       </li>
