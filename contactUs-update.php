@@ -2,13 +2,14 @@
     require_once 'models/Database.php';
     require_once 'models/contactUsUsers.php';
 
-    $dbcon = Database::getDb();
-    $user = new contactUsUsers();
-    $id=$fname=$lname=$email=$subject=$message= "";
+
+    $fname=$lname=$email=$subject=$message= "";
+    $u = new contactUsUsers();
     if(isset($_POST['updateMsgDetail']))
     {
         $id = $_POST['id'];
-        $selectedContact = $user->getMessageById($dbcon,$id);
+        $dbcon = Database::getDb();
+        $selectedContact = $u->getMessageById($dbcon,$id);
 
         $fname = $selectedContact->first_name;
         $lname = $selectedContact->last_name;
@@ -19,7 +20,6 @@
     }
     if (isset($_POST['updateMessage']))
     {
-        var_dump($_POST);
         $uid = $_POST['userid'];
         $first_name = $_POST['fname'];
         $last_name =  $_POST['lname'];
@@ -38,17 +38,17 @@
             $lnameErr = "Please Enter the last name!";
             $flag=1;
         }
-        if($subject == '')
+        if($usubject == '')
         {
             $subjectErr = "Please Enter the subject!";
             $flag=1;
         }
-        if ($message == '')
+        if($umessage == '')
         {
             $msgErr = "Please Enter the message!";
             $flag=1;
         }
-        if( $email == '')
+        if($uemail == '')
         {
             $emailErr = 'Please Enter the email!';
             $flag=1;
@@ -60,8 +60,7 @@
         }
         if($flag == 0)
         {           
-            $u = new contactUsUsers();
-
+            $dbcon = Database::getDb();
             $conn = $u->updateMessage($dbcon,$uid,$first_name,$last_name,$uemail,$usubject,$umessage);
 
             if($conn){
@@ -80,7 +79,6 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="./css/global.css">
-    <link rel="stylesheet" type="text/html" href="./css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
@@ -92,7 +90,7 @@
 
 <section >
     <main class="page-container">
-        <form action="Admin_Dashboard_ContactUs.php" method="POST">
+        <form action="" method="POST">
             <div class="form">
                 <div class="form-heading">
                     <h2>Contact Us - Form</h2>
@@ -131,7 +129,7 @@
                     <?= $message;?></textarea>
                 </div>
                 <div class="submit-section">
-                    <button class="submit-Button" type="submit" id="submit" name="updateMessage">Update</button>
+                    <button class="submit-Button" type="submit" id="updateMessage" name="updateMessage">Update</button>
                 </div>
             </div>
         </form>

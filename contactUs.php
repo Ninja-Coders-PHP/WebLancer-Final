@@ -2,7 +2,18 @@
     require_once 'models/Database.php';
     require_once 'models/contactUsUsers.php';
 
-    $dbcon = Database::getDb();
+    session_start();
+    if(!isset($_SESSION['userid'])){
+        header('Location: login.php');
+    }
+    else
+    {
+        if($_SESSION['role'] != 'Admin')
+        {
+            header('Location: login.php');
+        }   
+    }
+    
     if (isset($_POST['submitMessage']))
     {
         $first_name = $_POST['fname'];
@@ -44,11 +55,12 @@
         }
         if($flag == 0)
         {
-            $user = new contactUsUsers();
-            $conn = $user->addMessage($dbcon,$first_name,$last_name,$email,$subject,$message);
+            $dbcon = Database::getDb();
+            $u = new contactUsUsers();
+            $conn = $u->addMessage($dbcon,$first_name,$last_name,$email,$subject,$message);
 
             if($conn){
-                header("Location: ");
+                header("Location: successContactUs.php");
             }
             else{
                 echo "Problem occured!";
@@ -63,7 +75,6 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="./css/global.css">
-    <link rel="stylesheet" type="text/html" href="./css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
@@ -75,7 +86,7 @@
 
 <section >
     <main class="page-container">
-        <form action="successContactUs.php" method="POST">
+        <form action="" method="POST">
             <div class="form">
                 <div class="form-heading">
                     <h2>Contact Us</h2>

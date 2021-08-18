@@ -1,10 +1,21 @@
 <?php
-    require_once('models/Database.php');
-    require_once('models/contactUsUsers.php');
+    require_once('Models/Database.php');
+    require_once ('Models/contactUsUsers.php');
 
+    session_start();
+    if(!isset($_SESSION['userid'])){
+    header('Location: login.php');
+    }
+    else
+    {
+        if($_SESSION['role'] != 'Admin')
+        {
+            header('Location: login.php');
+        }
+    }
     $dbconn = Database::getDb();
-    $user = new contactUsUsers();
-    $users = $user->listMessages($dbconn);
+    $u = new contactUsUsers();
+    $users = $u->listMessages($dbconn);
 ?>
 
 <html>
@@ -15,7 +26,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>WebLancer-Home</title>
+        <title>Contact Us</title>
         <style>
             section{
                 padding: 1em 4em;
