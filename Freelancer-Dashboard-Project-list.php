@@ -1,4 +1,7 @@
 <?php
+
+require_once('models/Database.php');
+require_once('models/Freelancer.php');
 session_start();
 if(!isset($_SESSION['userid'])){
     header('Location: login.php');
@@ -11,8 +14,6 @@ else
     }
 }
 
-require_once('models/Database.php');
-require_once('models/Freelancer.php');
 
 $dbcon = Database::getDb();
 $f = new Freelancer();
