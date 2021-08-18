@@ -76,9 +76,9 @@ $results = $f->getFreelancerByUserId($dbcon, $_SESSION['userid']);
                 <div class="col-md-2">
                      <?php if (!(isset($results->profession))){
                        ?>
-                         <a href="./add-freelancer.php" id="btn_addFreelancer" class="button btn btn-success mb-2">Add Information</a>
+                         <a href="add-freelancer.php" id="btn_addFreelancer" class="button btn btn-success mb-2">Add Information</a>
                      <?php } ?>
-                    <a href="./update-freelancer.php?id=<?= $selectedUser->id?>" id="btn_updateFreelancer" class="button btn btn-primary mb-2">Update Information</a>
+                    <a href="update-freelancer.php?id=<?= $selectedUser->id?>" id="btn_updateFreelancer" class="button btn btn-primary mb-2">Update Information</a>
                     <form action="update-freelancer.php" method="post">
                     </form>
                     <form action="./delete-freelancer.php" method="post">
