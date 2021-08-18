@@ -21,7 +21,7 @@ $u = new users();
 $selectedUser = $u->getUserById($dbcon, $_SESSION['userid']);
 
 $f = new freelancer();
-$count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', 'xyz');
+//$count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', 'xyz');
 
 
 ?>

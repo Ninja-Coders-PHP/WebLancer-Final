@@ -31,14 +31,12 @@ if (isset($_POST['updateNewsLetter'])) {
     }
     if ($flag == 0) {
         $nl = new newsletter_details();
-        echo("$id -id") ;
         $cnt = $nl->updateNewsLetter($dbcon,$nsId, $subject, $body, $date);
-        var_dump($cnt);
-//        if ($cnt) {
-//            header('Location:newsletter-list.php');
-//        } else {
-//            header('Location : custom-error.php');
-//        }
+        if ($cnt) {
+            header('Location:newsletter-list.php');
+        } else {
+            header('Location : custom-error.php');
+        }
     }
 }
 ?>
@@ -55,7 +53,7 @@ if (isset($_POST['updateNewsLetter'])) {
     <title>WebLancer-Home</title>
 </head>
 <body>
-<?= include "header.php"; ?>
+<?php include "header.php"; ?>
 
 <section>
     <main class="page-container">

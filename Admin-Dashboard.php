@@ -43,12 +43,13 @@
     ?>
     <main>
         <section >
+            <h2>Some Important Links for Admin</h2>
             <ul>
-                <li><a href="Admin_Dashboard_ContactUs.php" >Contact - Us </a></li>
-                <li><a href="Admin_Dashboard_listUser.php">List Users</a> </li>
-                <li><a href="Admin-newsletter-subscribers.php">News Letter Subscribers List</a> </li>
-                <li><a href="newsletter-list.php">News Letter List</a> </li>
-                <li><a href="list-disputes.php">List of Disputes</a> </li>
+                <li><h3><a href="Admin_Dashboard_ContactUs.php" >Contact - Us List </a></h3></li>
+                <li><h3><a href="Admin_Dashboard_listUser.php">List Users</a></h3> </li>
+                <li><h3><a href="Admin-newsletter-subscribers.php">News Letter Subscribers List</a> </h3></li>
+                <li><h3><a href="newsletter-list.php">News Letter List</a></h3> </li>
+                <li><h3><a href="list-disputes.php">List of Disputes</a></h3> </li>
             </ul>
         </section>
 
