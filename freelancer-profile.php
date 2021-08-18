@@ -21,12 +21,10 @@ $u = new users();
 $selectedUser = $u->getUserById($dbcon, $_SESSION['userid']);
 
 $f = new freelancer();
-<<<<<<< HEAD
-$results = $f->getFreelancerByUserId($dbcon, $_SESSION['userid']);
-=======
-//$count = $f->addFreelancer($dbcon,$_SESSION['userid'],'Web Developer', '.NET', 'xyz');
 
->>>>>>> 47a5a349854034c6158eae5abc0215985ecff835
+$results = $f->getFreelancerByUserId($dbcon, $_SESSION['userid']);
+
+
 
 ?>
 
