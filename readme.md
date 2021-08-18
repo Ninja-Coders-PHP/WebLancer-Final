@@ -39,4 +39,4 @@
 - Uditesh : Contact Us CRUD.
 - Yifat : Project List CRUD.
 - Majdi : Freelancer Dashboard CRUD, Employer Dashboard CRUD.
-- Haroon : Feedback for Website CRUD.
+- Haroon : Feedback for Website & Careers page CRUD.
