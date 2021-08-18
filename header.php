@@ -30,7 +30,7 @@
                 Employers
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="employer-profile.php">Employer Profile</>
+                <a class="dropdown-item" href=" employer-profile.php">Employer Profile</>
                 <a class="dropdown-item" href = "Freelancer-Dashboard-Project-List.php">List of Employer Projects</a>
                 <a class="dropdown-item" href="DisputeManagement.php">Dispute Management</a>
             </div>

@@ -1,7 +1,7 @@
 <?php
 
-require_once('Models/Database.php');
-require_once ('Models/faqs.php');
+require_once('models/Database.php');
+require_once ('models/faqs.php');
 
 $que = $ans = "";
 $f = new faqs();
