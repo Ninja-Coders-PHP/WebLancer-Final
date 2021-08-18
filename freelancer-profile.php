@@ -1,8 +1,8 @@
 <?php
 
-require_once ('Models/Database.php');
-require_once ('Models/users.php');
-require_once ('Models/Freelancer.php');
+require_once('models/Database.php');
+require_once('models/users.php');
+require_once('models/Freelancer.php');
 
 session_start();
 if(!isset($_SESSION['userid'])){

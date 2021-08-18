@@ -1,8 +1,8 @@
 <?php
-require_once('Models/Database.php');
-require_once ('Models/newsletter_Subscribers.php');
-require_once ('Models/newsletter.php');
-require_once ('Models/newsletter_details.php');
+require_once('models/Database.php');
+require_once('models/newsletter_Subscribers.php');
+require_once('models/newsletter.php');
+require_once('models/newsletter_details.php');
 session_start();
 if(!isset($_SESSION['userid'])){
     header('Location: login.php');

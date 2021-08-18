@@ -11,8 +11,8 @@ else
     }
 }
 
-require_once('Models/Database.php');
-require_once ('Models/Freelancer.php');
+require_once('models/Database.php');
+require_once('models/Freelancer.php');
 
 $dbcon = Database::getDb();
 $f = new Freelancer();
