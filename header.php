@@ -43,7 +43,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="login.php">Login</a>
             <a class="dropdown-item" href="sign-up.php">Sign Up</a>
-            <a class="dropdown-item" href="#">Contact Us</a>
+            <a class="dropdown-item" href="contactUs.php">Contact Us</a>
             <a class="dropdown-item" href="logout.php">Logout</a>
             <a class="dropdown-item" href="add_news-letter_subscriber.php">News Letter Subscription</a>
           </div>
@@ -55,7 +55,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="Admin-Dashboard.php">Admin Dashboard</a>
             <a class="dropdown-item" href="Admin_Dashboard_ContactUs.php">Contact Us</a>
-            <a class="dropdown-item" href="Admin_Dashboard_listUser.php">List User</a>
+            <a class="dropdown-item" href="Admin_Dashboard_listUser.php">List User</a
           </div>
         </li>
         <li class="nav-item">
@@ -63,6 +63,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="listfeedback.php">Reviews</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faqsList.php">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="eventsUsers.php">Events</a>
         </li>
       </ul>
     </div>
