@@ -1,8 +1,8 @@
 
 <?php
 
-require_once('models/Database.php');
-require_once('models/newsletter_details.php');
+require_once('../models/Database.php');
+require_once('../models/newsletter_details.php');
 session_start();
 if(!isset($_SESSION['userid'])){
     header('Location: login.php');
@@ -24,7 +24,7 @@ $newsLetters = $n->getAllNewsletter($dbcon);
 <html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@ $newsLetters = $n->getAllNewsletter($dbcon);
 </head>
 <body>
 <?php
-include "header.php";
+include "../header.php";
 ?>
 <main>
     <section >
@@ -64,7 +64,7 @@ include "header.php";
                     <td> <a href ="newsletter-detail.php?id=<?= $newsLetter->id?>"><?= $newsLetter->subject?></a></td>
                     <td><?= $newsLetter->created_date?> </td>
                     <td>
-                        <form action="./send-newsletter.php" method="post">
+                        <form action="../send-newsletter.php" method="post">
                             <input type="hidden" name="id" value="<?=  $newsLetter->id; ?>"/>
                             <input type="submit" class="button btn btn-primary" name="send" value="Send"/>
                         </form>
@@ -83,8 +83,8 @@ include "header.php";
 
 </main>
 <footer>
-    <?= include_once "footer.php";
-    include_once "bootstrapjsfile.php";
+    <?= include_once "../footer.php";
+    include_once "../bootstrapjsfile.php";
     ?>
 </footer>
 </body>

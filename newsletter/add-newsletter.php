@@ -1,6 +1,6 @@
 <?php
-require_once 'models/Database.php';
-require_once 'models/newsletter_details.php';
+require_once '../models/Database.php';
+require_once '../models/newsletter_details.php';
 session_start();
 if(!isset($_SESSION['userid'])){
     header('Location: login.php');
@@ -47,8 +47,8 @@ if(isset($_POST['addNewsLetter']))
 
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/global.css">
-    <link rel="stylesheet" type="text/html" href="./css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" type="text/html" href="../css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@ if(isset($_POST['addNewsLetter']))
     <title>WebLancer-Home</title>
 </head>
 <body>
-<?= include "header.php";?>
+<?= include "../header.php";?>
 
 <section >
     <main class="page-container">
@@ -85,8 +85,8 @@ if(isset($_POST['addNewsLetter']))
         </form>
     </main>
 </section>
-<?= include "footer.php";
-include "bootstrapjsfile.php";
+<?= include "../footer.php";
+include "../bootstrapjsfile.php";
 ?>
 </body>
 </html>

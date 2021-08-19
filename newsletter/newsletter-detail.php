@@ -21,7 +21,7 @@ $selectedNewsLetter = $n->getNewsletterById($dbcon,$newsLetterId);
 <html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@ $selectedNewsLetter = $n->getNewsletterById($dbcon,$newsLetterId);
 </head>
 <body>
 <?php
-include "header.php";
+include "../header.php";
 ?>
 <main>
     <section >
@@ -47,7 +47,7 @@ include "header.php";
             <p><b>Created Date </b>: <?=$selectedNewsLetter->created_date?></p>
         </div>
         <div class="d-flex">
-            <form action="update-newsletter.php" method="post">
+            <form action="../update-newsletter.php" method="post">
                 <input type="hidden" name="id" value="<?=  $selectedNewsLetter->id; ?>"/>
                 <input type="submit" class="button btn btn-primary" name="update" value="Update"/>
             </form>
@@ -61,8 +61,8 @@ include "header.php";
 
 </main>
 <footer>
-    <?= include_once "footer.php";
-    include_once "bootstrapjsfile.php";
+    <?= include_once "../footer.php";
+    include_once "../bootstrapjsfile.php";
     ?>
 </footer>
 </body>
