@@ -1,6 +1,6 @@
 <?php
-require_once('models/Database.php');
-require_once('models/newsletter_details.php');
+require_once('../models/Database.php');
+require_once('../models/newsletter_details.php');
 
 session_start();
 if(!isset($_SESSION['userid'])){
@@ -47,7 +47,7 @@ include "../header.php";
             <p><b>Created Date </b>: <?=$selectedNewsLetter->created_date?></p>
         </div>
         <div class="d-flex">
-            <form action="../update-newsletter.php" method="post">
+            <form action="update-newsletter.php" method="post">
                 <input type="hidden" name="id" value="<?=  $selectedNewsLetter->id; ?>"/>
                 <input type="submit" class="button btn btn-primary" name="update" value="Update"/>
             </form>
