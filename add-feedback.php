@@ -28,21 +28,10 @@ if (isset($_POST["submit"])) {
 
 ?>
 <section>
-    <html>
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="./css/global.css">
-        <link rel="stylesheet" type="text/html" href="./css/home.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>WebLancer-Home</title>
-    </head>
 
-    <body>
 
-        <body>
+
             <h2>Please rate your experience with this website</h2>
             <form method="POST">
                 <div>
@@ -67,12 +56,6 @@ if (isset($_POST["submit"])) {
                     <button class="submit-Button" type="submit" id="submit" name="submit">Submit</button>
                 </div>
             </form>
-            <footer>
-                <?=
-                include_once "bootstrapjsfile.php";
-                ?>
-            </footer>
 
-        </body>
 
-    </html>
+</section>
