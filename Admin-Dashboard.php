@@ -51,6 +51,8 @@
                 <li><h3><a href="newsletter-list.php">News Letter List</a></h3> </li>
                 <li><h3><a href="list-disputes.php">List of Disputes</a></h3> </li>
                 <li><h3> <a href="privacyPolicy-list.php">Privacy Policy List</a></h3> </li>
+                <li><h3> <a href="eventsAdmin.php">Event Bookings List</a></h3> </li>
+                <li><h3> <a href="faqsAdmin.php">FAQs List</a></h3> </li>
             </ul>
         </section>
 
