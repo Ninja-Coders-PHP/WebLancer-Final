@@ -13,7 +13,7 @@
           <a class="nav-link" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.php">About</a>
+          <a class="nav-link" href="privacyPolicy-list.php">Privacy Policy</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,7 +21,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href=" freelancer-profile.php">Freelancer Profile</>
-              <a class="dropdown-item" href="Freelancer-Dashboard-Project-List.php">List of Freelancer Projects</a>
+              <a class="dropdown-item" href="Freelancer-Dashboard-Project-list.php">List of Freelancer Projects</a>
               <a class="dropdown-item" href="DisputeManagement.php">Dispute Management</a>
           </div>
         </li>
@@ -31,7 +31,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href=" employer-profile.php">Employer Profile</>
-              <a class="dropdown-item" href="Freelancer-Dashboard-Project-List.php">List of Employer Projects</a>
+              <a class="dropdown-item" href="Freelancer-Dashboard-Project-list.php">List of Employer Projects</a>
               <a class="dropdown-item" href="DisputeManagement.php">Dispute Management</a>
           </div>
         </li>

@@ -41,13 +41,13 @@
             <p>&copy; 2021 WebLancer. All Rights Reserved.</p>
             <nav>
                 <ul class="bottom-menu">
-                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="home.php">Home</a></li>
                     <li class="sperator">|</li>
-                    <li><a href="">About</a></li>
+                    <li><a href="privacyPolicy-list.php">Privacy</a></li>
                     <li class="sperator">|</li>
-                    <li><a href="">Login</a></li>
+                    <li><a href="login.php">Login</a></li>
                     <li class="sperator">|</li>
-                    <li><a href="">Freelancers</a></li>
+                    <li><a href="freelancer-profile.php">Freelancers</a></li>
                 </ul>
             </nav>
         </div>
