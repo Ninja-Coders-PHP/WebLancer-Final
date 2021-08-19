@@ -1,7 +1,7 @@
 <?php
 
-require_once('Models/Database.php');
-require_once('Models/careers.php');
+require_once('models/Database.php');
+require_once('models/careers.php');
 
 /*
 session_start();

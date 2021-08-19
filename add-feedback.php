@@ -1,7 +1,7 @@
 <?php
 
-require_once('Models/Database.php');
-require_once('Models/feedback.php');
+require_once('models/Database.php');
+require_once('models/feedback.php');
 
 session_start();
 
