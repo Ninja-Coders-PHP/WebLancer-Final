@@ -2,19 +2,22 @@
 
 require_once('models/Database.php');
 require_once('models/feedback.php');
-
+// Turn off all error reporting
+error_reporting(0);
 session_start();
 
 $dbcon = Database::getDb();
 
 $f = new feedback();
 
-if (!isset($_SESSION['userid'])) {
-    header('Location: login.php');
-}
-$user_id = $_SESSION['userid'];
+
 
 if (isset($_POST["submit"])) {
+
+    if (!isset($_SESSION['userid'])) {
+        header('Location: login.php');
+    }
+    $user_id = $_SESSION['userid'];
     $count = $f->addFeedback($dbcon, $user_id, $_POST["rate"], $_POST["reviews"]);
 
     var_dump($count);
