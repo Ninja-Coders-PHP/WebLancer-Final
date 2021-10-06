@@ -24,7 +24,6 @@
         $password =$_POST['password'];
         $confPassword = $_POST['confPassword'];
         $flag = 0;
-        var_dump($_POST['confPassword']);
         if($first_name == '')
         {
             $fnameErr = "Please Enter the first name";

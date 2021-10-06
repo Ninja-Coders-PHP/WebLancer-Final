@@ -25,11 +25,7 @@
     <a href="sign-up.php" class="btn btn-primary">Join Now</a>
   </div>
 
-  <div class="about">
-    <h1>About us</h1>
-    <p>All about us </p>
-  </div>
-  <div class="px-5 container">
+  <div class="px-5 container mt-5">
     <h2>Freelancers</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4 ">
       <div class="col">

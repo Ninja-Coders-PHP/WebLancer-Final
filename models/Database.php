@@ -2,7 +2,14 @@
 //Email - weblancer243@gmail.com
 //   Password - Weblancer123@
 
-
+//1. Go to https://remotemysql.com/index.html
+//2. Click phpMyAdmin from the nav-bar
+//3. Server name: remotemysql.com
+//4. Username - gfcWers9uX
+//5. Password - 9nyQxpzkvV
+//6. Database Name - gfcWers9uX
+//7. You will be abl to see the database same as the localhost that is all tables and everything.
+//8. The only difference is it is shared by everyone.So whatever data we put all can access in their features.
 class Database
 {
     //properties

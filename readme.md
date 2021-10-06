@@ -37,18 +37,11 @@
    
 ### Database Setup
 
-1. Go to https://remotemysql.com/index.html
-2. Click phpMyAdmin from the nav-bar
-3. Server name: remotemysql.com 
-4. Username - qsOs3uRW8t
-5. Password - 1ibk7Pq2fc
-6. Database Name - qsOs3uRW8t
-7. You will be abl to see the database same as the localhost that is all tables and everything.
-8. The only difference is it is shared by everyone.Sowhatever data we put all can acess in their features.
+
 
 
    
-
+a
 
 
 
